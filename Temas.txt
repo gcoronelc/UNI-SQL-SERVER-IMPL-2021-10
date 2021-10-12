@@ -1,0 +1,12 @@
+Temas
+-----------------------------------
+- Conociendo el servidor de BD.
+- Creación de la BD.
+- Crear de los objetos de la BD.
+- Consultas básicas.
+- Consultas multitablas.
+- Resumenes de datos.
+- Subconsultas.
+- Estructura With.
+- Manipulación de datos.
+- Vistas

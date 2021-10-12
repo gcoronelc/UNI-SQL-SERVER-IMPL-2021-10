@@ -1,0 +1,22 @@
+﻿CLONAR EL REPOSITORIO
+----------------------------------------------
+
+git clone https://github.com/gcoronelc/UNI-SQL-SERVER-IMPL-2021-10.git
+
+
+
+ACTUALIZAR EL REPOSITORIO
+----------------------------------------------
+
+git pull
+
+
+
+DESCARTAR MODIFICACIONES
+(borrar tus cambios)
+----------------------------------------------
+
+git checkout .
+
+
+
