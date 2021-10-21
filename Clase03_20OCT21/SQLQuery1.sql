@@ -51,5 +51,84 @@ FROM RH.DBO.empleado;
 GO
 
 
+-- TRUNCATE
+
+-- Se crea una tabla con la sentencia SELECT
+
+SELECT * INTO rh.dbo.emp_c02 
+FROM rh.dbo.empleado
+WHERE idcargo = 'C02';
+go
+
+select * from rh.dbo.emp_c02;
+go
+
+truncate table rh.dbo.emp_c02;
+go
+
+insert into rh.dbo.emp_c02
+SELECT *  
+FROM rh.dbo.empleado
+WHERE idcargo = 'C02';
+go
+
+
+-- DELETE es transaccional
+
+begin tran;
+go
+
+delete from rh.dbo.emp_c02;
+go
+
+select * from rh.dbo.emp_c02;
+go
+
+rollback;
+go
+
+select * from rh.dbo.emp_c02;
+go
+
+-- Y que pasa con TRUNCATE
+
+begin tran;
+go
+
+select @@TRANCOUNT;
+go
+
+truncate table rh.dbo.emp_c02;
+go
+
+select * from rh.dbo.emp_c02;
+go
+
+rollback;
+go
+
+select * from rh.dbo.emp_c02;
+go
+
+
+-- Y el drop table
+
+begin tran;
+go
+
+select @@TRANCOUNT;
+go
+
+select * from rh.dbo.emp_c02;
+go
+
+drop table rh.dbo.emp_c02;
+go
+
+rollback;
+go
+
+select * from rh.dbo.emp_c02;
+go
 
 
