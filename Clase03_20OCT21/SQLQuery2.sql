@@ -1,6 +1,6 @@
 
 -- SQL Server por defecto funciona en modo
--- confirmación autimática de transacciones.
+-- confirmación automática de transacciones.
 -- Toda operación es confirmada de manera automática.
 
 select * from rh.dbo.emp_c02;
@@ -44,6 +44,9 @@ GO
 
 BEGIN TRAN;
 GO
+
+select @@TRANCOUNT;
+go
 
 UPDATE EDUCA.dbo.MATRICULA 
 SET mat_nota = 18;
@@ -112,7 +115,7 @@ GO
 
 INSERT INTO rh.dbo.empleado ( idempleado , apellido, 
 nombre, fecingreso , idcargo , iddepartamento , sueldo ) 
-VALUES ( 'E8889', 'Ramos', 'Enrique', '30/05/2011', 'C99', 104, 4000.0 );
+VALUES ( 'E8899', 'Ramos', 'Enrique', '30/05/2011', 'C03', 104, 4000.0 );
 go
 
 
@@ -138,7 +141,7 @@ go
 select * from rh.dbo.cargo;
 go
 
-insert into rh.dbo.cargo values('K01', 'Jefe de todos', 30000, 60000);
+insert into rh.dbo.cargo values('K03', 'Jefe de todos', 30000, 60000);
 go
 
 

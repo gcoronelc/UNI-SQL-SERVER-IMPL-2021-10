@@ -19,6 +19,13 @@ go
 INSERT INTO RH.dbo.cargo VALUES('C15','Jefe',7500.0)
 go
 
+SP_HELP cargo;
+GO
+
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME='CARGO';
+
+
 -- Esta sentencia si se ejecuta correctamente.
 -- La cantidad de columnas y datos es la misma, 
 -- y son compatibles.
@@ -116,6 +123,7 @@ go
 begin tran;
 go
 
+-- Número de transacciones activas
 select @@TRANCOUNT;
 go
 
@@ -125,7 +133,7 @@ go
 drop table rh.dbo.emp_c02;
 go
 
-rollback;
+rollback; -- COMMIT;
 go
 
 select * from rh.dbo.emp_c02;
